@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Recursive';
+    src: url(./recursive.woff2) format('woff2');
+  }
+  
+  
+  .quote {
+    font-family: "Recursive";
+    font-variation-settings: "wght" 100;
+    font-size: 2.5rem;
+    line-height: 1.3em;
+    text-align: left;
+  }
+  span.text-beam {
+    transition: 100ms;
+    height: 1em;
+    display: inline-block;
+  }
