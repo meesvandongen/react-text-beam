@@ -1,30 +1,43 @@
 import './index.css';
-
+import { useEffect } from 'react';
 function TextBeam(props) {
-    console.log(props.children);
-    // let's explode the text into spans. [exp]lode-sp[an]
-    // 
+    useEffect(() => {
+        document.addEventListener('mousemove', (event) => {
+            let mouse = { x: event.clientX, y: event.clientY };
+            for (let span of document.querySelectorAll("span.react-text-beam")) {
+                // since Math.hypot is slow.. we do it this ugly way
+                let sx = span.getBoundingClientRect().left + (span.getBoundingClientRect().width / 2);
+                let sy = span.getBoundingClientRect().top + document.documentElement.scrollTop + (span.getBoundingClientRect().height / 2);
+                let a = mouse.x - sx;
+                let b = mouse.y - sy;
+                let c = Math.sqrt(a * a + b * b);
+                c = c * 2;
+                let topweight = 800;
+                c = clamp(c, 1, topweight);
+
+                let scale = topweight / document.documentElement.clientWidth * 2;
+                let calcedweight = topweight - Math.trunc(Math.abs(c * scale));
+
+                span.style["font-variation-settings"] = "'wght' " + calcedweight;
+            }
+        });
+
+    }, []);
     function expan(text) {
-        // for short strings spltting by each char is nice
-        // let chars = Array.from(text);
-        // but since that's slow 
-        let split = ' ';
-        let chars = text.split(split);
-        let shards = [];
-        let index = 0;
-        for (let char of chars) {
-            let shard = '<span id="char_' + index + '" class="text-beam">' + char + split + '</span>';
-            shards.push(shard);
-            index++;
+        let words = [];
+        for (let word of text.split(' ')) {
+            words.push(word);
         }
-        return {
-            'html': shards.join(split),
-            'length': index + 1,
-        };
-        
+        return words;
+    }
+    // https://stackoverflow.com/a/11410079
+    function clamp(current, min, max) {
+        return current <= min ? min : current >= max ? max : current;
     }
     return (
-        <span dangerouslySetInnerHTML={{ __html:expan(props.children).html}}></span>
+        expan(props.children).map((word, index) =>
+            <span key={index} className="react-text-beam">{word} </span>
+        )
     );
 }
 export default TextBeam;
