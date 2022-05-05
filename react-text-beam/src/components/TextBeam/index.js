@@ -2,7 +2,7 @@ import './index.css';
 import { useEffect } from 'react';
 function TextBeam(props) {
     useEffect(() => {
-        document.addEventListener('mousemove', (event) => {
+        const mouseMoveCallback = (event) => {
             let mouse = { x: event.clientX, y: event.clientY };
             for (let span of document.querySelectorAll("span.react-text-beam")) {
                 // since Math.hypot is slow.. we do it this ugly way
@@ -10,18 +10,23 @@ function TextBeam(props) {
                 let sy = span.getBoundingClientRect().top + document.documentElement.scrollTop + (span.getBoundingClientRect().height / 2);
                 let a = mouse.x - sx;
                 let b = mouse.y - sy;
-                let c = Math.sqrt(a * a + b * b);
-                c = c * 2;
+                let distance = Math.sqrt(a * a + b * b);
+                distance = distance * 2; // lol, i know.
+
                 let topweight = 800;
-                c = clamp(c, 1, topweight);
+                distance = clamp(distance, 1, topweight);
 
                 let scale = topweight / document.documentElement.clientWidth * 2;
-                let calcedweight = topweight - Math.trunc(Math.abs(c * scale));
+                let calcedweight = topweight - Math.trunc(Math.abs(distance * scale));
 
                 span.style["font-variation-settings"] = "'wght' " + calcedweight;
             }
-        });
-
+        }
+        document.addEventListener('mousemove', mouseMoveCallback);
+        return () => {
+            /* cheers Merlin04 */
+            document.removeEventListener('mousemove', mouseMoveCallback);
+        };
     }, []);
     function expan(text) {
         let words = [];
