@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/electronoob/react-text-beam/issues"
   },
-  "homepage": "https://github.com/electronoob/react-text-beam#readme"
+  "homepage": "https://github.com/electronoob/react-text-beam#readme",
+  "devDependencies": {
+    "@babel/preset-react": "^7.16.7"
+  }
 }
