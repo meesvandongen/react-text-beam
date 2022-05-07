@@ -4,5 +4,10 @@
   "private": true,
   "devDependencies": {
     "@babel/preset-react": "^7.16.7"
+  },
+  "babel": {
+    "presets": [
+        "react"
+    ]
   }
 }
