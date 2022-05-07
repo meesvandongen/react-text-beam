@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Recursive';
+  src: url(./recursive.woff2) format('woff2');
+}
+
+span.text-beam {
+  transition: 100ms;
+  height: 1em;
+  display: inline-block;
+  font-family: "Recursive";
+}
