@@ -2,6 +2,7 @@
   "name": "react-text-beam",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
+  "devDependencies": {
+    "@babel/preset-react": "^7.16.7"
   }
 }
