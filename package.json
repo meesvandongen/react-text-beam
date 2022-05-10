@@ -4,6 +4,7 @@
   "description": "add a nice mouse effect to text, looks a bit like a light beam, but thickens the text.",
   "source": "src/TextBeam/index.js",
   "main": "dist/index.js",
+  "module": "dist/module.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

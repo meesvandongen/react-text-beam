@@ -1,6 +1,6 @@
 import './index.css';
 import { useEffect } from 'react';
-function TextBeam(props) {
+export function TextBeam(props) {
     useEffect(() => {
         const mouseMoveCallback = (event) => {
             let mouse = { x: event.clientX, y: event.clientY };
@@ -45,4 +45,3 @@ function TextBeam(props) {
         )
     );
 }
-export default TextBeam;
