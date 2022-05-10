@@ -2,7 +2,7 @@
   "name": "react-text-beam",
   "version": "1.0.0",
   "description": "add a nice mouse effect to text, looks a bit like a light beam, but thickens the text.",
-  "source": "src/TextBeam/index.js",
+  "source": "src/index.js",
   "main": "dist/index.js",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
