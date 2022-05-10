@@ -1,1 +1,1 @@
-export * from './TextBeam'
+export { default } from "./TextBeam";
