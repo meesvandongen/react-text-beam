@@ -1,12 +1,12 @@
 import "./index.css";
-import {jsxs as $ggY34$jsxs} from "react/jsx-runtime";
-import {useEffect as $ggY34$useEffect} from "react";
+import {jsxs as $jQy0o$jsxs} from "react/jsx-runtime";
+import {useEffect as $jQy0o$useEffect} from "react";
 
 
 
 
-function $33efc10bda856dae$export$365e146f65b3d950(props) {
-    $ggY34$useEffect(()=>{
+function $4ea93abba43a83c8$export$365e146f65b3d950(props) {
+    $jQy0o$useEffect(()=>{
         const mouseMoveCallback = (event)=>{
             let mouse = {
                 x: event.clientX,
@@ -41,7 +41,7 @@ function $33efc10bda856dae$export$365e146f65b3d950(props) {
     function clamp(current, min, max) {
         return current <= min ? min : current >= max ? max : current;
     }
-    return expan(props.children).map((word, index)=>/*#__PURE__*/ $ggY34$jsxs("span", {
+    return expan(props.children).map((word, index)=>/*#__PURE__*/ $jQy0o$jsxs("span", {
             className: "react-text-beam",
             children: [
                 word,
@@ -52,5 +52,5 @@ function $33efc10bda856dae$export$365e146f65b3d950(props) {
 }
 
 
-export {$33efc10bda856dae$export$365e146f65b3d950 as TextBeam};
+export {$4ea93abba43a83c8$export$365e146f65b3d950 as TextBeam};
 //# sourceMappingURL=module.js.map
