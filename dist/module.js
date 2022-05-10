@@ -1,4 +1,4 @@
-import "./index.css";
+import "./module.css";
 import {jsxs as $jQy0o$jsxs} from "react/jsx-runtime";
 import {useEffect as $jQy0o$useEffect} from "react";
 
