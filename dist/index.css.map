@@ -1,0 +1,1 @@
+{"mappings":"AAAA;;;;;AAKA","sources":["src/TextBeam/index.css"],"sourcesContent":["@font-face {\r\n  font-family: 'Recursive';\r\n  src: url(./recursive.woff2) format('woff2');\r\n}\r\n\r\nspan.text-beam {\r\n  transition: 100ms;\r\n  height: 1em;\r\n  display: inline-block;\r\n  font-family: \"Recursive\";\r\n}\r\n"],"names":[],"version":3,"file":"index.css.map"}
